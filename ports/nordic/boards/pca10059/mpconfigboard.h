@@ -6,7 +6,7 @@
 
 #pragma once
 
-#define MICROPY_HW_BOARD_NAME       "PCA10059 nRF52840 Dongle"
+#define MICROPY_HW_BOARD_NAME       "PCA10059 nRF52840 Dongle itooth_REFERENCE_INTERNAL_GAIN1_6"
 #define MICROPY_HW_MCU_NAME         "nRF52840"
 
 #define MICROPY_HW_LED_STATUS          (&pin_P0_06)
