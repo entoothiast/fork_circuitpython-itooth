@@ -61,7 +61,8 @@ uint16_t common_hal_analogio_analogin_get_value(analogio_analogin_obj_t *self) {
     const nrf_saadc_channel_config_t config = {
         .resistor_p = NRF_SAADC_RESISTOR_DISABLED,
         .resistor_n = NRF_SAADC_RESISTOR_DISABLED,
-        .gain = NRF_SAADC_GAIN1_4,
+        // .gain = NRF_SAADC_GAIN1_4,
+        .gain = NRF_SAADC_GAIN1_6,
         // .reference = NRF_SAADC_REFERENCE_VDD4,
         .reference = NRF_SAADC_REFERENCE_INTERNAL,
         .acq_time = NRF_SAADC_ACQTIME_3US,
