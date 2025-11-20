@@ -6,6 +6,7 @@ on:
       board:
         description: 'Board: Found in ports/*/boards/[board_id]'
         required: true
+        default: pca10059
         type: string
       version:
         description: 'Version: Can be a tag or a commit (>=8.1.0)'
@@ -24,15 +25,20 @@ on:
       branch:
         description: 'Branch (only if Version="latest")'
         required: false
-        default: 'main'
+        default: 'itooth-9.2.9'
         type: string
       debug:
         description: 'Make a debug build'
         required: false
         default: false
         type: boolean
+      comment:
+        description: 'Describe this build.'
+        required: true
+        default: ''
+        type: string
 
-run-name: ${{ inputs.board }}-${{ inputs.language }}-${{ inputs.version }}${{ inputs.flags != '' && '-custom' || '' }}${{ inputs.debug && '-debug' || '' }}
+run-name: ${{ inputs.board }}-${{ inputs.branch }}-${{ inputs.comment }}
 
 jobs:
   build:
