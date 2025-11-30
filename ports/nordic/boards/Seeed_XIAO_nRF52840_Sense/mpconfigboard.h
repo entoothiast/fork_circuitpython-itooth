@@ -9,7 +9,7 @@
 
 #include "nrfx/hal/nrf_gpio.h"
 
-#define MICROPY_HW_BOARD_NAME       "Seeed XIAO nRF52840 Sense"
+#define MICROPY_HW_BOARD_NAME       "Seeed XIAO nRF52840 Sense itooth_NVM136kB b"
 #define MICROPY_HW_MCU_NAME         "nRF52840"
 
 #if QSPI_FLASH_FILESYSTEM
@@ -37,3 +37,8 @@
 #define CIRCUITPY_RGB_STATUS_R      (&pin_P0_26)
 #define CIRCUITPY_RGB_STATUS_G      (&pin_P0_30)
 #define CIRCUITPY_RGB_STATUS_B      (&pin_P0_06)
+
+// We remove 128kBytes from the FILESYSTEM and add it to NVM
+
+// ports/nordic/mpconfigport.h: (8 * 1024)
+#define CIRCUITPY_INTERNAL_NVM_SIZE (136 * 1024)
